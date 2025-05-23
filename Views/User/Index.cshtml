@@ -9,6 +9,19 @@
 <p>
     @Html.ActionLink("Create New", "Create", "User")
 </p>
+
+@using (Html.BeginForm("Index", "User", FormMethod.Get))
+{
+    <div class="form-group" style="margin-bottom: 15px;">
+        <div class="input-group">
+            @Html.TextBox("searchString", null, new { @class = "form-control", @placeholder = "Search by name or email..." })
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </div>
+}
+
 <table class="table">
     <tr>
         <th>
